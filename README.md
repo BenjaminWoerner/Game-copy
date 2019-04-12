@@ -19,6 +19,15 @@ NomNomNom is a game where the payer has to navigate through a maze while picking
 
 
 ## Data structure
+
+### main.js
+
+Functions to load start, main, and game over screens
+
+functions to manage transitions
+
+functions to connect keyboard commands to to player movements (from player.js) and events (from game.js)
+
 ### game.js
 ```
 Game(){
@@ -50,66 +59,22 @@ Game.prototype.finishGameCallback(){
 ```
 
 ### player.js
-```
-Player(){
-  this.x;
-  this.y;
-  this.size;
-  this.canvas;
-  this.ctx;
-}
 
-Character.prototype.update(){
-}
+// Player object storing visual representataion and location (x, y) to be manipulated
 
-Character.prototype.render(){
-}
+// functions for movement in all 4 directions 
 
-Character.prototype.move(){
-}
-
-Character.prototype.checkCollisionWithBlock(block){
-}
+// functions to check whether movement is possible (based on classes wall vs. path)
 
 
 
-```
+### maze.js
 
-### block.js
-```
-Block(){
-  this.x;
-  this.y;
-  this.size;
-  this.canvas;
-  this.ctx;
-}
-
-Block.prototype.render(){
-}
-```
+Create maze constructore
+Create maze data array (simple ony at first)
+Create confinement function (to only allow movement on the path)
 
 
-## States y States Transitions
-```
-- splashScreen()
-  - destroyGameOver(if)
-  - buildSplash()
-  - addEventListener(startGame)
-  
-  
-- starGame()
-  - destroySplash()
-  - destroyGameOver()
-  - create new Game()
-  - game.start()
-  
-  
-- gameOver()
-  - destroyGame()
-  - buildGameOver()
-  - addEventListener( if splashScreen, else startGame) 
-```
 
 ## Task
 - Main - buildDom
@@ -120,34 +85,33 @@ Block.prototype.render(){
 - Game - buildDom
 - Game - TimeOut test
 - Game - 3 states transitions
-- Main - GameWon
-- Main - destroy Game
-- Main - GameWon RESTART
-- Main - removeGameWon
-- Game - restartGame
-- Game - addEventListener
-- Block - create
-- Game - create player
-- Player - create
-- Player - move
-- Player - gravity
-- Player - collision
-- Player - jump
-- Game - check win
+
+- Maze: Constuctor
+- Maze: Maze Array
+
+- Player: Player object
+- Player: Player movement
+
+- Main: connect Maze and Playewr and test
+
+- Maze: Confinement function
+
+- Game: Collision functions and winning condition
+
+- Game add timer
 
 ## Links
 
 
 ### Trello
-[Link url](https://trello.com)
+[Link url] https://trello.com/b/FIolwstx/untitled-board
 
 
 ### Git
 URls for the project repo and deploy
-[Link Repo](https://github.com/Gabriel0liver/skull-jumper)
-[Link Deploy](https://Gabriel0liver.github.io/skull-jumper/)
+[Link Repo] https://github.com/BenjaminWoerner/NomNomNom-Game
 
 
 ### Slides
 URls for the project presentation (slides)
-[Link Slides.com](http://slides.com)
+[Link Slides.com]
