@@ -43,18 +43,35 @@ function main() {
     
     const game = new Game(canvasElement);
     game.startLoop();
+
+
+
+    document.addEventListener('keydown', function(event) {
+      if (event.keyCode === 37) {
+        game.player.setDirectionX(-1)
+      } else if (event.keyCode === 39) {
+        game.player.setDirectionX(1)
+      }
+    })
+
+    document.addEventListener('keyup', function(event) {
+      if(event.keyCode === 37 || event.keyCode === 39) {
+        game.player.setDirectionX(0);
+      }
+    })
     
+
     document.addEventListener('keydown', function(event) {
       if (event.keyCode === 38) {
-        game.player.setDirection(-1)
+        game.player.setDirectionY(-1)
       } else if (event.keyCode === 40) {
-        game.player.setDirection(1)
+        game.player.setDirectionY(1)
       }
     })
 
     document.addEventListener('keyup', function(event) {
       if(event.keyCode === 38 || event.keyCode === 40) {
-        game.player.setDirection(0);
+        game.player.setDirectionY(0);
       }
     })
   }

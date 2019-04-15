@@ -16,7 +16,7 @@ Game.prototype.startLoop = function() {
     this.clearCanvas();
     this.updateCanvas();
     this.drawCanvas();
-    console.log(this.player.direction)
+    // console.log(this.player.direction)
 
     window.requestAnimationFrame(loop);
   }
