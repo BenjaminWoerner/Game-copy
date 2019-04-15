@@ -52,6 +52,8 @@ function main() {
       } else if (event.keyCode === 39) {
         game.player.setDirectionX(1)
       }
+      game.checkWall.call(game);
+
     })
 
     document.addEventListener('keyup', function(event) {

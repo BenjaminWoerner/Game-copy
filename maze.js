@@ -11,7 +11,6 @@ var wallsarray = [
   [250, 0, 10, 400],
   [350, 0, 10, 400],
   [450, 0, 10, 400],
-  [100, 600, 10, -400],
   [200, 600, 10, -400],
   [300, 600, 10, -400],
   [500, 600, 10, -400],
@@ -23,6 +22,7 @@ function Wall (canvas) {
   this.x = 100;
   this.y = 100;
   this.ctx = this.canvas.getContext('2d');
+  this.wallsarray = wallsarray;
 }
 
 Wall.prototype.draw = function() {
@@ -30,10 +30,10 @@ Wall.prototype.draw = function() {
   wallsarray.forEach ((element) => {
     this.ctx.fillRect(element[0], element[1], element[2], element[3]);
   });
-  
-  //this.ctx.fillRect(this.x - this.size/2, this.y-this.size/2, this.size, this.size);
 
 }
+
+
 
 
 

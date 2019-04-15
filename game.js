@@ -16,6 +16,7 @@ Game.prototype.startLoop = function() {
     this.clearCanvas();
     this.updateCanvas();
     this.drawCanvas();
+    this.checkWall();
     // console.log(this.player.direction)
 
     window.requestAnimationFrame(loop);
@@ -34,4 +35,29 @@ Game.prototype.updateCanvas = function() {
 Game.prototype.drawCanvas = function() {
   this.player.draw();
   this.wall.draw();
+}
+
+Game.prototype.checkWall = function() {
+  let wallArray = this.wall.wallsarray;
+  for (let i = 0; i < wallArray.length; i++) {
+    
+    //this.wallsarray.forEach ((element) => {
+      // debugger;
+      if (
+        this.player.x+this.player.size >= wallArray[i][0] &&
+        this.player.x+this.player.size <= wallArray[i][0]+wallArray[i][2]
+        
+        //||
+        
+        //this.player.x-this.player.size >= element[0] &&
+        //this.player.x-this.player.size <= element[0]+element[2]
+        
+        
+        ) {
+          console.log("true")
+          break;
+        } else {console.log("false")}
+     // });
+    }
+
 }
