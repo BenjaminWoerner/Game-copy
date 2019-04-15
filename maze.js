@@ -5,6 +5,11 @@
 //var canvas = document.getElementById("gameCanvas");
 //var ctx = canvas.getContext("2d");
 
+var wallsarray = [
+  [100, 100, 25, 25],
+  [200, 200, 25, 25],
+];
+
 function Wall (canvas) {
   this.size = 25;
   this.canvas = canvas;
@@ -15,8 +20,16 @@ function Wall (canvas) {
 
 Wall.prototype.draw = function() {
   this.ctx.fillStyle = 'black';
-  this.ctx.fillRect(this.x - this.size/2, this.y-this.size/2, this.size, this.size);
+  wallsarray.forEach ((element) => {
+    this.ctx.fillRect(element[0], element[1], element[2], element[3]);
+  });
+  
+  //this.ctx.fillRect(this.x - this.size/2, this.y-this.size/2, this.size, this.size);
+
 }
+
+
+
 
 
 
