@@ -64,7 +64,7 @@ Game.prototype.checkWall = function() {
         ) {this.player.directionX = this.player.directionX*-1; this.player.direction = -1
         
         } 
-        else {return false;}
+        //else {return false;}
      // });
 
 
