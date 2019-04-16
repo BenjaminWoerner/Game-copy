@@ -41,12 +41,20 @@ Game.prototype.checkWall = function() {
   let wallArray = this.wall.wallsarray;
   for (let i = 0; i < wallArray.length; i++) {
     
+
+
+
     //this.wallsarray.forEach ((element) => {
       // debugger;
       if (
-        this.player.x+this.player.size >= wallArray[i][0] &&
-        this.player.x+this.player.size <= wallArray[i][0]+wallArray[i][2]
-        
+        this.player.x >= wallArray[i][0]-this.player.size 
+        &&
+        this.player.x <= wallArray[i][0]+wallArray[i][2]+this.player.size
+        &&
+        this.player.y >= wallArray[i][1]-this.player.size
+        &&
+        this.player.y <= wallArray[i][1]+wallArray[i][3]+this.player.size
+
         //||
         
         //this.player.x-this.player.size >= element[0] &&
@@ -55,9 +63,14 @@ Game.prototype.checkWall = function() {
         
         ) {
           console.log("true")
-          break;
+        
         } else {console.log("false")}
      // });
-    }
+
+
+
+
+
+  }
 
 }
