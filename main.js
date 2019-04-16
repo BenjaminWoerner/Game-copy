@@ -51,7 +51,12 @@ function main() {
         game.player.setDirectionX(-1)
       } else if (event.keyCode === 39) {
         game.player.setDirectionX(1)
-      }
+      } 
+      
+      //else if (event.keyCode === 37 || event.keyCode === 39) {
+        //game.player.bounceX();
+      //}
+    
     
 
     })

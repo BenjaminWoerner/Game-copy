@@ -8,7 +8,7 @@ function Player (canvas) {
   this.x = 15;
   this.y = 15;
   this.ctx = this.canvas.getContext('2d');
-  this.speed = 1;
+  this.speed = 2;
   this.directionY = 0;
   this.directionX = 0;
   // this.wall = new Wall(this.canvas)
@@ -33,6 +33,10 @@ Player.prototype.setDirectionY = function(newDirectionY) {
 Player.prototype.setDirectionX = function(newDirectionX) {
   this.directionX = newDirectionX;
   
+}
+
+Player.prototype.bounceX = function(){
+  this.x = this.x + this.directionX*-3
 }
 
 //Player.prototype.checkWall = function(){
