@@ -17,7 +17,7 @@ Game.prototype.startLoop = function() {
     this.updateCanvas();
     this.drawCanvas();
     this.checkWall();
-    // console.log(this.player.direction)
+    
 
     window.requestAnimationFrame(loop);
   }
@@ -61,10 +61,10 @@ Game.prototype.checkWall = function() {
         //this.player.x-this.player.size <= element[0]+element[2]
         
         
-        ) {
-          console.log("true")
+        ) {this.player.directionX = this.player.directionX*-1; this.player.direction = -1
         
-        } else {console.log("false")}
+        } 
+        else {return false;}
      // });
 
 
