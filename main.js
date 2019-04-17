@@ -48,9 +48,20 @@ function main() {
 
     document.addEventListener('keydown', function(event) {
       if (event.keyCode === 37) {
-        game.player.setDirectionX(-1)
+        if (game.blocked === false){
+          game.player.setDirectionX(-1)
+        }
+       else if (game.blocked === true){
+        game.player.x = game.player.x +1
+        }
+
       } else if (event.keyCode === 39) {
-        game.player.setDirectionX(1)
+        if (game.blocked === false){
+          game.player.setDirectionX(1)
+        }
+        else if (game.blocked === true){
+          game.player.x = game.player.x -1
+        }
       } 
       
       //else if (event.keyCode === 37 || event.keyCode === 39) {
@@ -72,10 +83,21 @@ function main() {
 
     document.addEventListener('keydown', function(event) {
       if (event.keyCode === 38) {
-        game.player.setDirectionY(-1)
+        if (game.blocked === false){
+          game.player.setDirectionY(-1)
+        }
+       else if (game.blocked === true){
+        game.player.y = game.player.y +1
+        }
+
       } else if (event.keyCode === 40) {
-        game.player.setDirectionY(1)
-      }
+        if (game.blocked === false){
+          game.player.setDirectionY(1)
+        }
+        else if (game.blocked === true){
+          game.player.y = game.player.y -1
+        }
+      } 
     })
 
     document.addEventListener('keyup', function(event) {

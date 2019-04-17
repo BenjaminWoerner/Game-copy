@@ -62,8 +62,9 @@ Game.prototype.checkWall = function() {
   };
   
   console.log(this.blocked);
+  console.log(this.player.directionX);
 
-  if (this.blocked === true){
+ if (this.blocked === true){
     this.player.bounceX();
   }
 

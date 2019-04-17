@@ -21,27 +21,26 @@ Player.prototype.draw = function() {
   this.ctx.fill();
 }
 
-Player.prototype.update = function() {
-  this.y = this.y + this.directionY * this.speed;
-  this.x = this.x + this.directionX * this.speed;
-}
-
 Player.prototype.setDirectionY = function(newDirectionY) {
   this.directionY = newDirectionY;
 }
 
 Player.prototype.setDirectionX = function(newDirectionX) {
-  this.directionX = newDirectionX;
-  
+  this.directionX = newDirectionX; 
 }
 
 Player.prototype.bounceX = function(){
-  this.x = this.x + this.directionX*-3
+  this.directionX = this.directionX*-1
+  this.directionY = this.directionY*-1
 }
 
-//Player.prototype.checkWall = function(){
+Player.prototype.update = function() {
+  this.y = this.y + this.directionY * this.speed;
+  this.x = this.x + this.directionX * this.speed;
+}
 
-  //this.x+this.r > wall x
+
+
 
 
 
