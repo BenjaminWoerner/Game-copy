@@ -64,9 +64,6 @@ function main() {
         }
       } 
       
-      //else if (event.keyCode === 37 || event.keyCode === 39) {
-        //game.player.bounceX();
-      //}
     
     
 
@@ -105,7 +102,19 @@ function main() {
         game.player.setDirectionY(0);
       }
     })
+  
+    document.addEventListener('keydown', function(event){
+    if (game.goalCollision == true) {
+      buildGameOverScreen();
+    };
+    })
+    
+    console.log(game.goalCollision);
+
   }
+
+
+  
 
   function buildGameOverScreen() {
     const gameOverScreen = buildDom(`

@@ -5,8 +5,8 @@
 function Player (canvas) {
   this.size = 15;
   this.canvas = canvas;
-  this.x = 15;
-  this.y = 15;
+  this.x = 18;
+  this.y = 18;
   this.ctx = this.canvas.getContext('2d');
   this.speed = 2;
   this.directionY = 0;
@@ -17,7 +17,7 @@ function Player (canvas) {
 Player.prototype.draw = function() {
   this.ctx.beginPath();
   this.ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-  this.ctx.fillStyle = 'green';
+  this.ctx.fillStyle = 'red';
   this.ctx.fill();
 }
 

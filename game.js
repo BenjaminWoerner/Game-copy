@@ -5,6 +5,8 @@ function Game(canvas) {
   this.wall = null;
   this.canvas = canvas;
   this.ctx = this.canvas.getContext('2d');
+ 
+  
 };
 
 Game.prototype.startLoop = function() {
@@ -42,6 +44,12 @@ Game.prototype.drawCanvas = function() {
 Game.prototype.checkWall = function() {
   this.wallArray = this.wall.wallsarray;
   
+  this.goalCollision = false;
+
+  if(this.player.x > this.wall.goalX-this.wall.goalSize && this.player.y > this.wall.goalY-this.wall.goalSize) {
+    this.goalCollision = true;
+  }
+  
   this.blocked = false
   
 
@@ -68,8 +76,6 @@ Game.prototype.checkWall = function() {
       }
   };
   
-  console.log(this.blocked);
-  console.log(this.player.directionX);
 
  if (this.blocked === true){
     this.player.bounceX();
@@ -79,61 +85,3 @@ Game.prototype.checkWall = function() {
 
 
 
-
-    //if (this.player.x >= this.wallArray[i][0]-this.player.size && !this.blockLeft) { // left
-    //  this.blockLeft = true;
-    //}
-      //if( this.player.x <= this.wallArray[i][0]+this.wallArray[i][2]+this.player.size && !this.blockRight) {
-      //this.blockRight = true;
-   // }
-    
-    // right
-     // if( this.player.y >= this.wallArray[i][1]-this.player.size  && !this.blockUp)  {
-      //this.blockUp = true;
-
-    //} // top
-      //if( this.player.y <= this.wallArray[i][1]+this.wallArray[i][3]+this.player.size && !this.blockDown) {
-      //this.blockDown = true;
-
-     
-    
-      // bottom
-
-      //||
-      
-      //this.player.x-this.player.size >= element[0] &&
-      //this.player.x-this.player.size <= element[0]+element[2]
-      
-      
-     // ) {
-
-
-
-  //  wallArray.forEach ((element) => {
-      // debugger;
-      //if (
-      //  this.player.x >= wallArray[i][0]-this.player.size 
-      //  &&
-      //  this.player.x <= wallArray[i][0]+wallArray[i][2]+this.player.size
-     //   &&
-      //  this.player.y >= wallArray[i][1]-this.player.size
-      //  &&
-       // this.player.y <= wallArray[i][1]+wallArray[i][3]+this.player.size
-
-        //||
-        
-        //this.player.x-this.player.size >= element[0] &&
-        //this.player.x-this.player.size <= element[0]+element[2]
-        
-        
-       // ) {
-          //this.player.directionX = this.player.directionX*-1; 
-          //this.player.directionY = this.player.directionY*-1;
-          //this.player.speed = 0;
-        
-       // } 
-       // else {
-       //   this.player.speed = 1
-       //  
-       // }
-     // });
