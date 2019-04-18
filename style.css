@@ -35,33 +35,6 @@ p {
 
 
 
-/* ---- layout ---- */
-
-#site-header {
-  padding: 30px 0;
-  color: white;
-  background: #111;
-}
-
-#site-footer {
-  color: white;
-  padding: 60px 0;
-  background: #111;
-}
-
-#site-main {
-  margin-bottom: 60px;
-}
-
-.container {
-  margin: 0 20px;
-}
-
-.section {
-  margin-bottom: 20px;
-  padding-top: 20px;
-}
-
 @media (min-width: 768px) {
   .container {
     max-width: 728px;
@@ -88,7 +61,38 @@ p {
 
 /* ---- section ---- */
 
+body {
+  width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
 .game-container {
+  display: flex;
+  width: 600px;
+  height: 600px;
+  border: 1px solid black;
+  background-image: url('./assets/trolley.jpg');
+  background-size: cover;
+  align-items: center;
+  justify-content: center
+}
+
+.splash-screen {
+  display: flex;
+  width: 100vh;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background-image: url('./assets/splash.jpg');
+  background-size: cover;
+  align-items: center;
+  justify-content: center
+}
+
+.game-over-screen{
   width: 600px;
   height: 600px;
   border: 1px solid black;

@@ -1,7 +1,7 @@
 'use strict';
 
 function Player (canvas) {
-  this.size = 15;
+  this.size = 20;
   this.canvas = canvas;
   this.x = 18;
   this.y = 18;
@@ -18,7 +18,7 @@ function Player (canvas) {
 
 Player.prototype.draw = function() {
    
-  this.ctx.drawImage(this.img, this.x-this.size, this.y-this.size, 50, 50);
+  this.ctx.drawImage(this.img, this.x-this.size, this.y-this.size, 45, 45);
   
   //this.ctx.beginPath();
   //this.ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);

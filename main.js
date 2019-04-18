@@ -12,7 +12,7 @@ function main() {
 
   function buildSplashScreen() {
     const splashScreen = buildDom(`
-      <section>
+      <section class="splash-screen">
         <h1>NomNomNom</h1>
         <button class="start-button">Start</button>
       </section>
@@ -29,10 +29,6 @@ function main() {
         <canvas></canvas>
       </section>
     `);
-
-    var playerImg = document.createElement("img");
-    playerImg.src = "./assets/player.png";
-    playerImg.setAttribute("id", "plaxerimg");
 
     const gameContainerElement = document.querySelector('.game-container')
 
@@ -122,7 +118,7 @@ function main() {
 
   function buildGameOverScreen() {
     const gameOverScreen = buildDom(`
-      <section>
+      <section class="game-over-screen">
         <h1>Game Over</h1>
         <button class="restart-button">Restart</button>
       </section>
