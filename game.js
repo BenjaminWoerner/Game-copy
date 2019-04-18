@@ -56,7 +56,14 @@ Game.prototype.checkWall = function() {
       this.player.x <= this.wallArray[i][0]+this.wallArray[i][2]+this.player.size &&
       this.player.y >= this.wallArray[i][1]-this.player.size &&
       this.player.y <= this.wallArray[i][1]+this.wallArray[i][3]+this.player.size &&
-      this.blocked === false){
+      this.blocked === false
+      
+      || this.player.y-this.player.size < 0 || this.player.x-this.player.size < 0 
+      || this.player.y+this.player.size > 600 || this.player.x+this.player.size > 600
+      )
+      
+      
+      {
         this.blocked = true;
       }
   };
