@@ -30,6 +30,10 @@ function main() {
       </section>
     `);
 
+    var playerImg = document.createElement("img");
+    playerImg.src = "./assets/player.png";
+    playerImg.setAttribute("id", "plaxerimg");
+
     const gameContainerElement = document.querySelector('.game-container')
 
     const width = gameContainerElement.offsetWidth;

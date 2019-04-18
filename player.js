@@ -1,7 +1,5 @@
 'use strict';
 
-// functions to check whether movement is possible (based on classes wall vs. path)
-
 function Player (canvas) {
   this.size = 15;
   this.canvas = canvas;
@@ -11,14 +9,21 @@ function Player (canvas) {
   this.speed = 2;
   this.directionY = 0;
   this.directionX = 0;
-  // this.wall = new Wall(this.canvas)
+  this.image = document.getElementById('playerimg')
+  this.img = new Image();
+  this.img.src = "./assets/player.png"
+
+
 }
 
 Player.prototype.draw = function() {
-  this.ctx.beginPath();
-  this.ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
-  this.ctx.fillStyle = 'red';
-  this.ctx.fill();
+   
+  this.ctx.drawImage(this.img, this.x-this.size, this.y-this.size, 50, 50);
+  
+  //this.ctx.beginPath();
+  //this.ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
+  //this.ctx.fillStyle = 'red';
+  //this.ctx.fill();
 }
 
 Player.prototype.setDirectionY = function(newDirectionY) {
