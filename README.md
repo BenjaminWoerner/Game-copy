@@ -98,7 +98,7 @@ Create confinement function (to only allow movement on the path)
 
 - Game: Collision functions and winning condition
 
-- Game add timer
+- Game add
 
 ## Links
 
